@@ -1,13 +1,13 @@
 package com.fraser.drinkresponsibly
 
-import com.fraser.drinkresponsibly.Recommend.recommendMaxAbvForOneDrink
+import com.fraser.drinkresponsibly.RecommendForOneDrink.recommendMaxAbvForOneDrink
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.within
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class RecommendTest {
+class RecommendForOneDrinkTest {
 
     @Test
     internal fun `recommend 3% abv for 1 unit in a 330ml can`() {
