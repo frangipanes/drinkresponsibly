@@ -9,7 +9,7 @@ class DrinkTest {
 
     @Test
     internal fun `drink has same name and size as set by constructor`() {
-        val bottle = Drink("Bottle", 275.0)
+        val bottle = Bottle("Bottle", 275.0)
         assertThat(bottle.name).isEqualTo("Bottle")
         assertThat(bottle.size).isEqualTo(275.0)
     }
