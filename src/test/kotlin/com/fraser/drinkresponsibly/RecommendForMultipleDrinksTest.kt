@@ -59,6 +59,16 @@ class RecommendForMultipleDrinksTest {
         assertThat(getRecommendationForNthDrink(recommendation, 1).second).isCloseTo(4.0, within(0.1))
     }
 
+    @Test
+    internal fun `do not recommend 9 metric pints at 0,4% abv (below minimum) for 2 units in metric pints`() {
+        val recommendation = recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.metricPint, 2.0)
+
+        println(recommendation)
+
+        assertThat(getRecommendationForNthDrink(recommendation, 8).second).isGreaterThanOrEqualTo(0.5)
+        assertThat(recommendation.size).isLessThan(9)
+    }
+
     private fun getRecommendationForNthDrink(recommendation: List<Pair<Double, Double>>, n: Int) =
             recommendation[n - 1]
 }
