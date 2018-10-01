@@ -66,7 +66,7 @@ class RecommendForMultipleDrinksTest {
         println(recommendations)
 
         assertThat(recommendations.getNth(8).abv).isGreaterThanOrEqualTo(0.5)
-        assertThat(recommendations.size).isLessThan(9)
+        assertThat(recommendations.size).isLessThanOrEqualTo(16)
     }
 
 }

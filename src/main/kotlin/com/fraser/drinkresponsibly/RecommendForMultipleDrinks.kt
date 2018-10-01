@@ -10,12 +10,16 @@ object RecommendForMultipleDrinks {
 
         val list: MutableList<Recommendation> = mutableListOf()
 
-        for (numberOfDrinks in 1..maxDrinks) {
-            val recommendation = getRecommendationForNDrinks(drink, units, numberOfDrinks.toDouble())
+        var numberOfDrinks = 1.0
+
+        while (numberOfDrinks <= maxDrinks.toDouble()) {
+            val recommendation = getRecommendationForNDrinks(drink, units, numberOfDrinks)
 
             if (isAbvHigherThanMinimum(recommendation) && isAbvLowerThanMaximum(recommendation)) {
                 list += recommendation
             }
+
+            numberOfDrinks += drink.stepSize
         }
 
         return list.sortedWith(compareBy(Recommendation::numberOfDrinks))
