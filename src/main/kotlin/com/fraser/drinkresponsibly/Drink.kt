@@ -15,10 +15,12 @@ data class Can(override val name: String, override val size: Double) : Drink {
     override val stepSize: Double
         get() = 1.0
 }
+
 data class Pint(override val name: String, override val size: Double) : Drink {
     override val stepSize: Double
         get() = 0.5
 }
+
 data class Wine(override val name: String, override val size: Double) : Drink {
     override val stepSize: Double
         get() = 1.0

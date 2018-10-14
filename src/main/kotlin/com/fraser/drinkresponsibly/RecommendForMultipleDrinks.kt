@@ -4,10 +4,13 @@ object RecommendForMultipleDrinks {
 
     private const val MIN_ABV = 0.5
     private const val MAX_ABV = 40.0
+    private const val DEFAULT_MAX_DRINKS = 20
 
-    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double): List<Recommendation> {
-        val maxDrinks = 20
+    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double):List<Recommendation> {
+        return recommendMaxAbvAndNumberOfDrinks(drink, units, DEFAULT_MAX_DRINKS)
+    }
 
+    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double, maxDrinks: Int): List<Recommendation> {
         val list: MutableList<Recommendation> = mutableListOf()
 
         var numberOfDrinks = 1.0
