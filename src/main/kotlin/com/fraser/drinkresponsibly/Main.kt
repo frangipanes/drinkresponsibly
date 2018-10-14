@@ -8,12 +8,12 @@ fun main(args: Array<String>) {
             AvailableDrinks.pint)
 
     val units = 1.5
-    val maxDrinks = 3
+    val maxDrinks = 3.0
 
     val recommendations: MutableMap<Drink, List<Recommendation>> = mutableMapOf()
 
     for (drink in establishment) {
-        recommendations.put(drink, RecommendForMultipleDrinks.recommendMaxAbvAndNumberOfDrinks(drink, units, maxDrinks))
+        recommendations.put(drink, RecommendForMultipleDrinks().recommendMaxAbvAndNumberOfDrinks(drink, units, maxDrinks))
     }
 
     for (recommendation in recommendations) {
