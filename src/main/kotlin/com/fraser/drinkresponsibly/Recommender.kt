@@ -1,10 +1,14 @@
 package com.fraser.drinkresponsibly
 
+import kotlin.math.abs
+
 interface Recommender {
-    fun recommendMaxAbvAndNumberOfDrinks(
+    fun getRecommendations(
         drink: Drink,
         units: Double
     ): List<Recommendation>
+
+    fun getMaxAbv(drink: Drink, units: Double, numberOfDrinks: Double): Double
 }
 
 class RecommenderImpl(
@@ -13,7 +17,7 @@ class RecommenderImpl(
     private val maxDrinks: Double = 20.0
 ) : Recommender {
 
-    override fun recommendMaxAbvAndNumberOfDrinks(
+    override fun getRecommendations(
         drink: Drink,
         units: Double
     ): List<Recommendation> {
@@ -22,9 +26,10 @@ class RecommenderImpl(
         var numberOfDrinks = 0.0 + drink.stepSize
 
         while (numberOfDrinks <= maxDrinks) {
-            val recommendation = getRecommendationForNDrinks(drink, units, numberOfDrinks)
+            val recommendation =
+                Recommendation(numberOfDrinks, getMaxAbv(drink, units, numberOfDrinks))
 
-            if (isAbvHigherThanMinimum(recommendation) && isAbvLowerThanMaximum(recommendation)) {
+            if (recommendation.abv in minAbv..maxAbv) {
                 list += recommendation
             }
 
@@ -34,22 +39,8 @@ class RecommenderImpl(
         return list.sortedWith(compareBy(Recommendation::numberOfDrinks))
     }
 
-    private fun isAbvHigherThanMinimum(recommendation: Recommendation) =
-        recommendation.abv >= minAbv
-
-    private fun isAbvLowerThanMaximum(recommendation: Recommendation) =
-        recommendation.abv <= maxAbv
-
-    private fun getRecommendationForNDrinks(
-        drink: Drink,
-        units: Double,
-        numberOfDrinks: Double
-    ): Recommendation {
-        val abv = getMaxAbvForNDrinks(drink, units, numberOfDrinks)
-        return Recommendation(numberOfDrinks, abv)
+    override fun getMaxAbv(drink: Drink, units: Double, numberOfDrinks: Double): Double {
+        return 1000.0 * abs(units) / abs(drink.size) / numberOfDrinks
     }
 
-    private fun getMaxAbvForNDrinks(drink: Drink, units: Double, numberOfDrinks: Double): Double {
-        return RecommendForOneDrink.recommendMaxAbvForOneDrink(drink, units) / numberOfDrinks
-    }
 }
