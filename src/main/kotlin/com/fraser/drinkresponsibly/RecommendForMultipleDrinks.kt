@@ -6,14 +6,9 @@ class RecommendForMultipleDrinks(
     private val maxDrinks: Double = 20.0
 ) {
 
-    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double): List<Recommendation> {
-        return recommendMaxAbvAndNumberOfDrinks(drink, units, maxDrinks)
-    }
-
     fun recommendMaxAbvAndNumberOfDrinks(
         drink: Drink,
-        units: Double,
-        maxDrinks: Double
+        units: Double
     ): List<Recommendation> {
         val list: MutableList<Recommendation> = mutableListOf()
 

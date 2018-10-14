@@ -13,7 +13,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `recommend 1 can at 3% abv for 1 unit in 330ml cans`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.can330, 1.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.can330,
+                1.0
+            )
 
         println(recommendations)
 
@@ -24,7 +27,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `recommend 2 cans at 1,5% abv for 1 unit in 330ml cans`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.can330, 1.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.can330,
+                1.0
+            )
 
         println(recommendations)
 
@@ -35,7 +41,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `recommend 1 can at 6% abv for 2 units in 330ml cans`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.can330, 2.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.can330,
+                2.0
+            )
 
         println(recommendations)
 
@@ -46,7 +55,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `recommend 2 cans at 3% abv for 2 units in 330ml cans`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.can330, 2.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.can330,
+                2.0
+            )
 
         println(recommendations)
 
@@ -57,7 +69,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `recommend 1 metric pint at 4% abv for 2 units in metric pints`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.metricPint, 2.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.metricPint,
+                2.0
+            )
 
         println(recommendations)
 
@@ -68,7 +83,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `do not recommend 9 metric pints at 0,4% abv (below minimum) for 2 units in metric pints`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.metricPint, 2.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.metricPint,
+                2.0
+            )
 
         println(recommendations)
 
@@ -79,7 +97,10 @@ class RecommendForMultipleDrinksTest {
     @Test
     internal fun `recommend half pint`() {
         val recommendations =
-            recommender.recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.pint, 5.0)
+            recommender.recommendMaxAbvAndNumberOfDrinks(
+                AvailableDrinks.pint,
+                5.0
+            )
 
         println(recommendations)
 
