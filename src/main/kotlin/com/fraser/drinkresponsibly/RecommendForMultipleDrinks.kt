@@ -1,6 +1,6 @@
 package com.fraser.drinkresponsibly
 
-class RecommendForMultipleDrinks(val minAbv: Double = 0.5, val maxAbv: Double = 40.0, val maxDrinks: Double = 20.0) {
+class RecommendForMultipleDrinks(private val minAbv: Double = 0.5, private val maxAbv: Double = 40.0, private val maxDrinks: Double = 20.0) {
 
     fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double):List<Recommendation> {
         return recommendMaxAbvAndNumberOfDrinks(drink, units, maxDrinks)
