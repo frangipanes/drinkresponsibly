@@ -13,10 +13,7 @@ fun main(args: Array<String>) {
     val recommendations: MutableMap<Drink, List<Recommendation>> = mutableMapOf()
 
     for (drink in establishment) {
-        recommendations.put(
-            drink,
-            RecommenderImpl(3.0, 6.0, 3.0).getRecommendations(drink, units)
-        )
+        recommendations[drink] = RecommenderImpl(3.0, 6.0, 3.0).getRecommendations(drink, units)
     }
 
     for (recommendation in recommendations) {
