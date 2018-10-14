@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class RecommendForMultipleDrinksTest {
+class RecommenderTest {
 
-    private val recommender = RecommendForMultipleDrinks()
+    private val recommender = RecommenderImpl()
 
     @Test
     internal fun `recommend 1 can at 3% abv for 1 unit in 330ml cans`() {

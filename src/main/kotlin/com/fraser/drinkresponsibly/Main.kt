@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
     for (drink in establishment) {
         recommendations.put(
             drink,
-            RecommendForMultipleDrinks(3.0, 6.0, 3.0).recommendMaxAbvAndNumberOfDrinks(drink, units)
+            RecommenderImpl(3.0, 6.0, 3.0).recommendMaxAbvAndNumberOfDrinks(drink, units)
         )
     }
 
