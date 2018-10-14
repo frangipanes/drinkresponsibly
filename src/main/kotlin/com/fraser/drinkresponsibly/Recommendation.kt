@@ -1,7 +1,5 @@
 package com.fraser.drinkresponsibly
 
-import java.lang.IndexOutOfBoundsException
-
 data class Recommendation(val numberOfDrinks: Double, val abv: Double) {
     override fun toString(): String {
         return String.format("%.1f @ %.1f%%", numberOfDrinks, abv)

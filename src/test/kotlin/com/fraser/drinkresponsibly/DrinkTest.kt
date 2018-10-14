@@ -17,19 +17,19 @@ class DrinkTest {
     @Test
     internal fun availableDrinksIncludesAllDrinks() {
         assertThat(AvailableDrinks.availableDrinks).containsExactlyInAnyOrder(
-                AvailableDrinks.bottle275,
-                AvailableDrinks.bottle330,
-                AvailableDrinks.bottle500,
-                AvailableDrinks.bottle660,
-                AvailableDrinks.can330,
-                AvailableDrinks.can440,
-                AvailableDrinks.metricPint,
-                AvailableDrinks.pint,
-                AvailableDrinks.stubbie,
-                AvailableDrinks.thirdPint,
-                AvailableDrinks.wine125,
-                AvailableDrinks.wine175,
-                AvailableDrinks.wine250
+            AvailableDrinks.bottle275,
+            AvailableDrinks.bottle330,
+            AvailableDrinks.bottle500,
+            AvailableDrinks.bottle660,
+            AvailableDrinks.can330,
+            AvailableDrinks.can440,
+            AvailableDrinks.metricPint,
+            AvailableDrinks.pint,
+            AvailableDrinks.stubbie,
+            AvailableDrinks.thirdPint,
+            AvailableDrinks.wine125,
+            AvailableDrinks.wine175,
+            AvailableDrinks.wine250
         )
     }
 }

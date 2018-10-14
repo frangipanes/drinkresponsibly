@@ -1,12 +1,20 @@
 package com.fraser.drinkresponsibly
 
-class RecommendForMultipleDrinks(private val minAbv: Double = 0.5, private val maxAbv: Double = 40.0, private val maxDrinks: Double = 20.0) {
+class RecommendForMultipleDrinks(
+    private val minAbv: Double = 0.5,
+    private val maxAbv: Double = 40.0,
+    private val maxDrinks: Double = 20.0
+) {
 
-    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double):List<Recommendation> {
+    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double): List<Recommendation> {
         return recommendMaxAbvAndNumberOfDrinks(drink, units, maxDrinks)
     }
 
-    fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double, maxDrinks: Double): List<Recommendation> {
+    fun recommendMaxAbvAndNumberOfDrinks(
+        drink: Drink,
+        units: Double,
+        maxDrinks: Double
+    ): List<Recommendation> {
         val list: MutableList<Recommendation> = mutableListOf()
 
         var numberOfDrinks = 0.0 + drink.stepSize
@@ -25,12 +33,16 @@ class RecommendForMultipleDrinks(private val minAbv: Double = 0.5, private val m
     }
 
     private fun isAbvHigherThanMinimum(recommendation: Recommendation) =
-            recommendation.abv >= minAbv
+        recommendation.abv >= minAbv
 
     private fun isAbvLowerThanMaximum(recommendation: Recommendation) =
-            recommendation.abv <= maxAbv
+        recommendation.abv <= maxAbv
 
-    private fun getRecommendationForNDrinks(drink: Drink, units: Double, numberOfDrinks: Double): Recommendation {
+    private fun getRecommendationForNDrinks(
+        drink: Drink,
+        units: Double,
+        numberOfDrinks: Double
+    ): Recommendation {
         val abv = getMaxAbvForNDrinks(drink, units, numberOfDrinks)
         return Recommendation(numberOfDrinks, abv)
     }

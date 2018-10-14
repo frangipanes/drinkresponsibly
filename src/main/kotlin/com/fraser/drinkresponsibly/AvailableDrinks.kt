@@ -16,17 +16,18 @@ object AvailableDrinks {
     val wine250 = Wine("Wine (250)", 250.0)
 
     val availableDrinks = listOf(
-            stubbie,
-            can330,
-            can440,
-            bottle275,
-            bottle330,
-            bottle500,
-            bottle660,
-            pint,
-            metricPint,
-            thirdPint,
-            wine125,
-            wine175,
-            wine250)
+        stubbie,
+        can330,
+        can440,
+        bottle275,
+        bottle330,
+        bottle500,
+        bottle660,
+        pint,
+        metricPint,
+        thirdPint,
+        wine125,
+        wine175,
+        wine250
+    )
 }
