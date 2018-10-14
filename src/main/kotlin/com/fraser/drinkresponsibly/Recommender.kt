@@ -8,7 +8,6 @@ interface Recommender {
         units: Double
     ): List<Recommendation>
 
-    fun getMaxAbv(drink: Drink, units: Double, numberOfDrinks: Double): Double
 }
 
 class RecommenderImpl(
@@ -39,7 +38,7 @@ class RecommenderImpl(
         return list.sortedWith(compareBy(Recommendation::numberOfDrinks))
     }
 
-    override fun getMaxAbv(drink: Drink, units: Double, numberOfDrinks: Double): Double {
+    fun getMaxAbv(drink: Drink, units: Double, numberOfDrinks: Double): Double {
         return 1000.0 * abs(units) / abs(drink.size) / numberOfDrinks
     }
 
