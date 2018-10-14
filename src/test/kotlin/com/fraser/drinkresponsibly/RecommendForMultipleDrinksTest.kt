@@ -69,4 +69,12 @@ class RecommendForMultipleDrinksTest {
         assertThat(recommendations.size).isLessThanOrEqualTo(16)
     }
 
+    @Test
+    internal fun `recommend half pint`() {
+        val recommendations = recommendMaxAbvAndNumberOfDrinks(AvailableDrinks.pint, 5.0)
+
+        println(recommendations)
+
+        assertThat(recommendations.getNth(0.5)).isNotNull
+    }
 }

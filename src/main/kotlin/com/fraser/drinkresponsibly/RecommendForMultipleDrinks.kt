@@ -13,7 +13,7 @@ object RecommendForMultipleDrinks {
     fun recommendMaxAbvAndNumberOfDrinks(drink: Drink, units: Double, maxDrinks: Int): List<Recommendation> {
         val list: MutableList<Recommendation> = mutableListOf()
 
-        var numberOfDrinks = 1.0
+        var numberOfDrinks = 0.0 + drink.stepSize
 
         while (numberOfDrinks <= maxDrinks.toDouble()) {
             val recommendation = getRecommendationForNDrinks(drink, units, numberOfDrinks)

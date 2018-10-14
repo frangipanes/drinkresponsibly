@@ -2,13 +2,10 @@ package com.fraser.drinkresponsibly
 
 fun main(args: Array<String>) {
 
-    val establishment = listOf(AvailableDrinks.stubbie,
+    val establishment = listOf(
             AvailableDrinks.can330,
-            AvailableDrinks.can440,
             AvailableDrinks.bottle275,
-            AvailableDrinks.bottle330,
-            AvailableDrinks.bottle500,
-            AvailableDrinks.bottle660)
+            AvailableDrinks.pint)
 
     val units = 1.5
     val maxDrinks = 3
@@ -19,6 +16,8 @@ fun main(args: Array<String>) {
         recommendations.put(drink, RecommendForMultipleDrinks.recommendMaxAbvAndNumberOfDrinks(drink, units, maxDrinks))
     }
 
-    println(recommendations)
+    for (recommendation in recommendations) {
+        println(recommendation)
+    }
 }
 
